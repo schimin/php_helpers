@@ -1,7 +1,7 @@
 # php_helpers
 Helper usado em projetos PHP
 
-1 - Converte um formato de data americano para um formato de data brasileiro
+1 - Converte um formato de data americano para um formato de data brasileiro \n
 2 - Converte um formato de data americano para um formato de data brasileiro
 3 - Converte um formato de data brasileiro para um formato de data americano
 4 - Converte um formato decimal para o formato de moeda
