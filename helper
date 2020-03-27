@@ -91,6 +91,7 @@ function reais_to_decimal_r($data){
 		
 	}
 }
+// converte valor decimal para reais com simbolo R$
 function decimal_to_reais_r($data){
 	
 	if($data){
@@ -106,6 +107,7 @@ function decimal_to_reais_r($data){
 }
 if ( ! function_exists('formata_preco'))
 {
+	// Função para converter um valor em preço real R$
 	function formata_preco($valor)
 	{
 		$negativo = false;
@@ -131,6 +133,7 @@ if ( ! function_exists('formata_preco'))
 			$preco = strrev($preco);
 			return ($negativo ? "-" : "") . $preco;
 	}
+	// Função para descobrir o dia da semana de uma data
 	function diasemana($data) {
         $ano =  substr("$data", 0, 4);
         $mes =  substr("$data", 5, -3);
@@ -151,7 +154,7 @@ if ( ! function_exists('formata_preco'))
         return "$diasemana";
 		//uso diasemana("1985-03-30");
 	}
-	//FORMATA COMO TIMESTAMP
+	//FORMATA DATA COMO TIMESTAMP
       function dataToTimestamp($data){
         $ano =  substr("$data", 0, 4);
         $mes =  substr("$data", 5, -3);
@@ -166,7 +169,8 @@ if ( ! function_exists('formata_preco'))
         $dia =  substr("$data", 8, 9);
       	
       	return date("Y-m-d", mktime(0, 0, 0, $mes, $dia+1, $ano));
-    }
+	}
+	//Função para mostrar uma data em extenso em portugues PT-BR
     function extenso($valor = 0, $maiusculas = false) {
 	    if(!$maiusculas){
 	        $singular = ["centavo", "real", "mil", "milhão", "bilhão", "trilhão", "quatrilhão"];
@@ -222,13 +226,14 @@ if ( ! function_exists('formata_preco'))
 	        return strtoupper($return);
 	    }
 	}
-
+	// Função para formatar CEP no Brasil
     function formata_CEP($numero)
     {
         $numero = preg_replace("[' '-./ t]", '', $numero);
         $valor  = str_pad(preg_replace('[^0-9]', '', $numero), 7, '0', STR_PAD_LEFT);
         return preg_replace('/^(\d{2})(\d{3})(\d{3})$/', '$1.$2-$3', $valor);
-    }
+	}
+	//Função para formatar CPF ou CNPJ e retorna a mascara correta
     function formatarCPF_CNPJ($campo, $formatado=TRUE)
     {
         # retira formato
